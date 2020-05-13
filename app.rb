@@ -10,7 +10,8 @@ ENV['DB_PASSWORD'] = "iyajy1kgp2nczrpi"
 ActiveRecord::Base.establish_connection(ENV['RACK_ENV'].to_sym)
 
 Elasticsearch::Model.client = Elasticsearch::Client.new(
-	url: 'http://161.35.6.102:9200/',
+	# url: 'http://161.35.6.102:9200/',
+	url: 'localhost:9200',
 	log: true
 )
 set :database_file, 'config/database.yml'
