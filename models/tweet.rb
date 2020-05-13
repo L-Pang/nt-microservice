@@ -3,6 +3,9 @@ require 'elasticsearch/model'
 
 class Tweet < ActiveRecord::Base
 
+	include Elasticsearch::Model
+	include Elasticsearch::Model::Callbacks
+
 	has_many :comments
 	has_many :commenters, 
 	:through => :comments, 
