@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'activerecord'
+gem 'pg'
+gem 'puma'
+gem 'rack-test'
+gem 'sinatra'
+gem 'bcrypt'
+gem 'sinatra-activerecord'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
