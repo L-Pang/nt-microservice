@@ -24,7 +24,7 @@ get '/user/:id' do
 	Tweet.where(user_id: id).to_json
 end
 
-post '/search' do
+get '/search' do
 	# @tweet = Tweet.search(params[:search_term])
 	query = params[:query]
 	if !query.nil?
