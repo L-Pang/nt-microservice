@@ -57,16 +57,6 @@ get '/search' do
 			}
 			).results
 		end
-		if !response.nil?
-			{
-        :res => response,
-        :status => "success"
-			}.to_json
-		else
-			{
-        :res => nil,
-        :status => "failed"
-			}.to_json
-		end
+		response.to_json
 	end
 end
