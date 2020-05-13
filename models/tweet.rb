@@ -21,9 +21,6 @@ class Tweet < ActiveRecord::Base
 	has_many :has_tags
 	has_many :tags, through: :has_tags
 
-	include Elasticsearch::Model
-	include Elasticsearch::Model::Callbacks
-
 	settings do
 		mappings dynamic: false do
 			indexes :tweet, type: :text, analyzer: :english
@@ -49,5 +46,6 @@ end
 unless Tweet.__elasticsearch__.index_exists?
 	Tweet.__elasticsearch__.create_index!
 end
+# Tweet.__elasticsearch__.import
 Tweet.__elasticsearch__.refresh_index!
 # Tweet.__elasticsearch__.delete_index!
