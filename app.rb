@@ -3,9 +3,9 @@ require 'sinatra'
 require_relative './models/tweet'
 require_relative './models/user'
 
-ENV["RACK_ENV"] ||= "development"
-ENV['DB_HOST'] = "gigatwitter-db-postgresql-do-user-7074878-0.db.ondigitalocean.com"
-ENV['DB_PASSWORD'] = "iyajy1kgp2nczrpi"
+ENV['RACK_ENV'] = 'development'
+ENV['DB_HOST'] = 'gigatwitter-db-postgresql-do-user-7074878-0.db.ondigitalocean.com'
+ENV['DB_PASSWORD'] = 'iyajy1kgp2nczrpi'
 
 ActiveRecord::Base.establish_connection(ENV['RACK_ENV'].to_sym)
 
