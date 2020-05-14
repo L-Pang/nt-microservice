@@ -19,6 +19,11 @@ get '/' do
 	"Nano Twitter Microservice".to_json
 end
 
+get '/user/:id' do
+	id = params[:id].to_i
+	Tweet.where(user_id: id).to_json
+end
+
 get '/search' do
 	# @tweet = Tweet.search(params[:search_term])
 	query = params[:query]
